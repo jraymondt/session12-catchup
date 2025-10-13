@@ -28,35 +28,61 @@ const ApodForm = () => {
         <div className="field">
           <label className="label">Date (YYYY-MM-DD)</label>
           <div className="control">
-            <input id="date" className="input" type="date" />
+            <input
+              id="date"
+              className="input"
+              type="date"
+              onChange={(e) => setDate(e.target.value)}
+            />
           </div>
         </div>
 
         <div className="field">
           <label className="label">Start Date (YYYY-MM-DD)</label>
           <div className="control">
-            <input id="start_date" className="input" type="date" />
+            <input
+              id="start_date"
+              className="input"
+              type="date"
+              onChange={(e) => setStartDate(e.target.value)}
+            />
           </div>
         </div>
 
         <div className="field">
           <label className="label">End Date (YYYY-MM-DD)</label>
           <div className="control">
-            <input id="end_date" className="input" type="date" />
+            <input
+              id="end_date"
+              className="input"
+              type="date"
+              onChange={(e) => setEndDate(e.target.value)}
+            />
           </div>
         </div>
 
         <div className="field">
           <label className="label">Count</label>
           <div className="control">
-            <input id="count" className="input" type="number" min="1" />
+            <input
+              id="count"
+              className="input"
+              type="number"
+              min="1"
+              onChange={(e) => setCount(e.target.value)}
+            />
           </div>
         </div>
 
         <div className="field">
           <label className="label">Include Video Thumbnails</label>
           <div className="control">
-            <input id="thumbs" className="checkbox" type="checkbox" />
+            <input
+              id="thumbs"
+              className="checkbox"
+              type="checkbox"
+              onChange={(e) => setThumbs(e.target.value)}
+            />
           </div>
         </div>
 
