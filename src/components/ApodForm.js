@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const ApodForm = ({ fetchApodData }) => {
+  // console.log(fetchApodData(), props);
   // For the form fields
   const [date, setDate] = useState("");
   const [startDate, setStartDate] = useState("");

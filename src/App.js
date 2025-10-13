@@ -17,11 +17,10 @@ function App() {
       apiUrl += `&${key}=${parameters[key]}`;
     }
 
-    apiUrl = ApodForm();
-
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
+      // console.log(`data`);
       setApodData(data);
     } catch (err) {
       setError(`${err.mssage}`);
@@ -34,7 +33,7 @@ function App() {
       <section className="section">
         <div className="container">
           <ApodForm fetchApodData={fetchApodData} />
-          <ApodContent pdData={apodData} />
+          <ApodContent apodData={apodData} />
         </div>
       </section>
     </div>
