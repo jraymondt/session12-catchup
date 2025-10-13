@@ -10,7 +10,7 @@ function App() {
 
   // event handler
   const fetchApodData = async (parameters) => {
-    const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
+    const apiKey = "j7zecHn3hNANmgts8pYoC5G355dtbiZjbBCuCEA1";
     let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
     for (const key in parameters) {
