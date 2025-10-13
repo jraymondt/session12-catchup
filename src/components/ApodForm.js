@@ -33,6 +33,7 @@ const ApodForm = () => {
               className="input"
               type="date"
               onChange={(e) => setDate(e.target.value)}
+              value={date}
             />
           </div>
         </div>
@@ -45,6 +46,7 @@ const ApodForm = () => {
               className="input"
               type="date"
               onChange={(e) => setStartDate(e.target.value)}
+              value={startDate}
             />
           </div>
         </div>
@@ -57,6 +59,7 @@ const ApodForm = () => {
               className="input"
               type="date"
               onChange={(e) => setEndDate(e.target.value)}
+              value={endDate}
             />
           </div>
         </div>
@@ -70,6 +73,7 @@ const ApodForm = () => {
               type="number"
               min="1"
               onChange={(e) => setCount(e.target.value)}
+              value={count}
             />
           </div>
         </div>
@@ -82,6 +86,7 @@ const ApodForm = () => {
               className="checkbox"
               type="checkbox"
               onChange={(e) => setThumbs(e.target.value)}
+              value={thumbs}
             />
           </div>
         </div>
