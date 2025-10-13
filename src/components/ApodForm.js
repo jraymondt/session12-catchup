@@ -9,7 +9,10 @@ const ApodForm = () => {
   const [thumbs, setThumbs] = useState(false);
 
   // what about the event
-  const handleDSubmit() = () => {}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const params = {};
+  };
 
   return (
     <form class="section">
