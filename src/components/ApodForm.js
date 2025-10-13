@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ApodForm = () => {
   // For the form fields
@@ -21,55 +21,55 @@ const ApodForm = () => {
   };
 
   return (
-    <form class="section">
-      <div class="container">
-        <h1 class="title">NASA Astronomy Picture of the Day</h1>
+    <form onSubmit={handleSubmit} className="section">
+      <div className="container">
+        <h1 className="title">NASA Astronomy Picture of the Day</h1>
 
-        <div class="field">
-          <label class="label">Date (YYYY-MM-DD)</label>
-          <div class="control">
-            <input id="date" class="input" type="date" />
+        <div className="field">
+          <label className="label">Date (YYYY-MM-DD)</label>
+          <div className="control">
+            <input id="date" className="input" type="date" />
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">Start Date (YYYY-MM-DD)</label>
-          <div class="control">
-            <input id="start_date" class="input" type="date" />
+        <div className="field">
+          <label className="label">Start Date (YYYY-MM-DD)</label>
+          <div className="control">
+            <input id="start_date" className="input" type="date" />
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">End Date (YYYY-MM-DD)</label>
-          <div class="control">
-            <input id="end_date" class="input" type="date" />
+        <div className="field">
+          <label className="label">End Date (YYYY-MM-DD)</label>
+          <div className="control">
+            <input id="end_date" className="input" type="date" />
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">Count</label>
-          <div class="control">
-            <input id="count" class="input" type="number" min="1" />
+        <div className="field">
+          <label className="label">Count</label>
+          <div className="control">
+            <input id="count" className="input" type="number" min="1" />
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">Include Video Thumbnails</label>
-          <div class="control">
-            <input id="thumbs" class="checkbox" type="checkbox" />
+        <div className="field">
+          <label className="label">Include Video Thumbnails</label>
+          <div className="control">
+            <input id="thumbs" className="checkbox" type="checkbox" />
           </div>
         </div>
 
-        <div class="field">
-          <div class="control">
-            <button id="fetch-apod" class="button is-link">
+        <div className="field">
+          <div className="control">
+            <button id="fetch-apod" className="button is-link">
               Fetch APOD
             </button>
           </div>
         </div>
 
-        <div id="apod-content" class="box">
-          <p class="has-text-centered">
+        <div id="apod-content" className="box">
+          <p className="has-text-centered">
             Please enter parameters and click "Fetch APOD".
           </p>
         </div>
