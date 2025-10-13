@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ApodForm = () => {
+const ApodForm = ({ fetchApodData }) => {
   // For the form fields
   const [date, setDate] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -18,6 +18,7 @@ const ApodForm = () => {
     if (endDate) params.end_date = date;
     if (count) params.count = count;
     if (thumbs) params.thumbs = thumbs;
+    fetchApodData(params);
   };
 
   return (

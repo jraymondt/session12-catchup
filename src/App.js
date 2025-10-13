@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import DateInputComponent from "./components/DateInputComponent.js";
 import ApodForm from "./components/ApodForm";
 import ApodContent from "./components/ApodContent";
@@ -6,37 +6,26 @@ import "./App.css";
 
 function App() {
   const [apodData, setApodData] = useState(null);
+  const [error, setError] = useState(null);
 
   // event handler
   const fetchApodData = async (parameters) => {
-    fetchApodButton.addEventListener("click", () => {
+    const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
+    let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
-      let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
+    for (const key in parameters) {
+      apiUrl += `&${key}=${parameters[key]}`;
+    }
 
-      for (const key in parameters) {
-        apiUrl += `&${key}=${parameters[key]}`;
-      }
+    apiUrl = ApodForm();
 
-      apiUrl = apodForm();
-
-      try {
-        const response = await fetch(apiUrl)
-          // .then((response) => response.json())
-          // .then((data) => {
-          //   // render
-          //   if (Array.isArray(data)) {
-          //     apodContent.innerHTML = "";
-          //     data.forEach((item) => displayApod(item, apodContent));
-          //   } else {
-          //     apodContent.innerHTML = "";
-          //     displayApod(data, apodContent);
-          //   }
-          // })
-          // .catch((error) => {
-          //   apodContent.innerHTML = `<p>Error fetching data: ${error.message}</p>`;
-          // });
-      }
-    });
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      setApodData(data);
+    } catch (err) {
+      setError(`${err.mssage}`);
+    }
   };
 
   // return <DateInputComponent />;
@@ -44,8 +33,8 @@ function App() {
     <div className="App">
       <section className="section">
         <div className="container">
-          <ApodForm />
-          <ApodContent />
+          <ApodForm fetchApodData={fetchApodData} />
+          <ApodContent pdData={apodData} />
         </div>
       </section>
     </div>
