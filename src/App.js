@@ -2,6 +2,10 @@ import React, { useState } from "react";
 // import DateInputComponent from "./components/DateInputComponent.js";
 import ApodForm from "./components/ApodForm";
 import ApodContent from "./components/ApodContent";
+import StyledComponent from "./components/StyledComponent";
+import Accordian from "./components/Accordian";
+import PeopleList from "./components/PeopleList";
+import Gallery from "./components/Gallery";
 import "./App.css";
 
 function App() {
@@ -34,6 +38,26 @@ function App() {
         <div className="container">
           <ApodForm fetchApodData={fetchApodData} />
           <ApodContent apodData={apodData} />
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <StyledComponent />
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <Accordian />
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <PeopleList />
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <Gallery />
         </div>
       </section>
     </div>

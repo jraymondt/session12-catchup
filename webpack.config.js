@@ -41,7 +41,7 @@ module.exports = {
 
     headers: {
       "Content-Security-Policy":
-        "default-src 'self'; style-src 'self' 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-eval'; connect-src 'self' http://localhost:3000 https://api.nasa.gov; img-src 'self' https://apod.nasa.gov; video-src 'self' https://apod.nasa.gov;",
+        "default-src 'self'; style-src 'self' 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-eval'; connect-src 'self' http://localhost:3000 https://api.nasa.gov; img-src 'self' https://apod.nasa.gov https://i.imgur.com; video-src 'self' https://apod.nasa.gov;",
     },
 
     historyApiFallback: true,
