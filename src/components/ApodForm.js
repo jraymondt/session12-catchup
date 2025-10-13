@@ -1,6 +1,16 @@
 import React from "react";
 
 const ApodForm = () => {
+  // For the form fields
+  const [date, setDate] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [count, setCount] = useState("");
+  const [thumbs, setThumbs] = useState(false);
+
+  // what about the event
+  const handleDSubmit() = () => {}
+
   return (
     <form class="section">
       <div class="container">
