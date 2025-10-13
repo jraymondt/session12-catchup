@@ -12,6 +12,12 @@ const ApodForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const params = {};
+
+    if (date) params.date = date;
+    if (startDate) params.start_date = startDate;
+    if (endDate) params.end_date = date;
+    if (count) params.count = count;
+    if (thumbs) params.thumbs = thumbs;
   };
 
   return (
