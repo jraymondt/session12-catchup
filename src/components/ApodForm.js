@@ -10,6 +10,7 @@ const ApodForm = ({ fetchApodData }) => {
 
   // what about the event
   const handleSubmit = (e) => {
+    console.log('Form submitted!'); // Debug: Check if form submission works
     e.preventDefault();
     const params = {};
 
@@ -18,7 +19,15 @@ const ApodForm = ({ fetchApodData }) => {
     if (endDate) params.end_date = endDate;
     if (count) params.count = count;
     if (thumbs) params.thumbs = thumbs;
-    fetchApodData(params);
+    
+    console.log('Form parameters:', params);
+    console.log('fetchApodData function:', fetchApodData); // Debug: Check if function is passed correctly
+    
+    if (fetchApodData) {
+      fetchApodData(params);
+    } else {
+      console.error('fetchApodData function is not available!');
+    }
   };
 
   return (
