@@ -2,6 +2,7 @@ import React from "react";
 // import DateInputComponent from "./components/DateInputComponent.js";
 import ApodForm from "./components/ApodForm";
 import ApodContent from "./components/ApodContent";
+import "./App.css";
 
 function App() {
   // return <DateInputComponent />;
