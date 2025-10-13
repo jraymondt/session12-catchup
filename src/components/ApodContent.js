@@ -1,27 +1,49 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ApodContent = () => {
+const ApodContent = ({ data }) => {
+  if (!data) {
+    return (
+      <div className="box">
+        <p className="has-text-centered">
+          Please enter parameters and click "Fetch APOD".
+        </p>
+      </div>
+    );
+  }
+
+  const renderSingleApod = (apodData, index) => (
+    <div key={apodData.date || index} className="box mb-4">
+      {apodData.media_type === "image" ? (
+        <figure className="image">
+          <img src={apodData.url} alt={apodData.title} />
+        </figure>
+      ) : apodData.media_type === "video" ? (
+        <div className="video-container">
+          <iframe 
+            src={apodData.url} 
+            frameBorder="0" 
+            allowFullScreen
+            title={apodData.title}
+          />
+        </div>
+      ) : (
+        <p>Media type not supported: {apodData.media_type}</p>
+      )}
+      <h2 className="title is-4 mt-4">{apodData.title}</h2>
+      {apodData.date && (
+        <p className="subtitle is-6">Date: {apodData.date}</p>
+      )}
+      <p>{apodData.explanation}</p>
+    </div>
+  );
+
   return (
-    <></>
-    //           if (data.media_type === "image") {
-    //     container.innerHTML += `
-    //                 <figure class="image is-4by3">
-    //                     <img src="${data.url}" alt="${data.title}">
-    //                 </figure>
-    //                 <h2 class="title is-4">${data.title}</h2>
-    //                 <p>${data.explanation}</p>
-    //             `;
-    //   } else if (data.media_type === "video") {
-    //     container.innerHTML += `
-    //                 <div class="video-container">
-    //                     <iframe src="${data.url}" frameborder="0" allowfullscreen></iframe>
-    //                 </div>
-    //                 <h2 class="title is-4">${data.title}</h2>
-    //                 <p>${data.explanation}</p>
-    //             `;
-    //   } else {
-    //     container.innerHTML += `<p>Media type not supported: ${data.media_type}</p>`;
-    //   }
+    <div id="apod-content">
+      {Array.isArray(data) 
+        ? data.map(renderSingleApod)
+        : renderSingleApod(data, 0)
+      }
+    </div>
   );
 };
 

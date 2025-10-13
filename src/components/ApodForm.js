@@ -15,7 +15,7 @@ const ApodForm = ({ fetchApodData }) => {
 
     if (date) params.date = date;
     if (startDate) params.start_date = startDate;
-    if (endDate) params.end_date = date;
+    if (endDate) params.end_date = endDate;
     if (count) params.count = count;
     if (thumbs) params.thumbs = thumbs;
     fetchApodData(params);

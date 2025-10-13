@@ -17,14 +17,17 @@ function App() {
       apiUrl += `&${key}=${parameters[key]}`;
     }
 
-    apiUrl = ApodForm();
-
     try {
       const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const data = await response.json();
       setApodData(data);
+      setError(null); // Clear any previous errors
     } catch (err) {
-      setError(`${err.mssage}`);
+      setError(`Error fetching data: ${err.message}`);
+      setApodData(null);
     }
   };
 
@@ -34,7 +37,12 @@ function App() {
       <section className="section">
         <div className="container">
           <ApodForm fetchApodData={fetchApodData} />
-          <ApodContent pdData={apodData} />
+          <ApodContent data={apodData} />
+          {error && (
+            <div className="notification is-danger">
+              {error}
+            </div>
+          )}
         </div>
       </section>
     </div>
