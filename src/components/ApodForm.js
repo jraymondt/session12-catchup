@@ -85,8 +85,8 @@ const ApodForm = () => {
               id="thumbs"
               className="checkbox"
               type="checkbox"
-              onChange={(e) => setThumbs(e.target.value)}
-              value={thumbs}
+              onChange={(e) => setThumbs(e.target.checked)}
+              checked={thumbs}
             />
           </div>
         </div>
