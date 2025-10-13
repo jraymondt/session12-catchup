@@ -25,4 +25,4 @@ const ApodContent = () => {
   );
 };
 
-export default ApocContent;
+export default ApodContent;
